@@ -51,4 +51,6 @@ int main()
     mhs4.printAll();
 
     cout << "Akses dari luar object = " << mahasiswa::getNim() << endl; //mengakses nim melalui static member function "getNim"
+
+    return 0;
 }
