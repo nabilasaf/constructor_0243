@@ -1,56 +1,29 @@
-#include <iostream>
-#include <string>
+#include <iostream> 
 using namespace std;
 
-class mahasiswa
+class buku
 {
-    private:
-        static int nim;
-     public:
-        int id;
-        string nama;
-
-        void setID();
-        void printAll();
-        static void setNim(int pNim) { nim = pNim;}
-        static int getNim() { return nim; }
-
-        mahasiswa(string pnama)
-        {
-            nama = pnama;
-            setID();
-        }
-};
-
-int mahasiswa::nim = 0;
-
-void mahasiswa::setID()
+    string judul;
+public:
+    buku setJudul (string judul)
+    {
+        this->judul = judul; 
+        return *this; // chain function
+    }
+string getJudul()
 {
-    id = ++nim;
+    return this->judul;
 }
-
-void mahasiswa::printAll()
-{
-    cout << "ID = " << id << endl;
-    cout << "Nama = " << nama << endl;
-    cout << endl;
-}
+} bukunya;
 
 int main()
 {
-    mahasiswa mhs1("Sri Dadi");
-    mahasiswa mhs2("Budi Jatmiko");
+// bukunya.setJudul ("Matematika");
 
-    mahasiswa::setNim(243); //mengakses nim melalui static member function "setNim"
-    mahasiswa mhs3("Andi Janu");
-    mahasiswa mhs4("joko Wahono");
+// cout << bukunya.getJudul();
 
-    mhs1.printAll();
-    mhs2.printAll();
-    mhs3.printAll();
-    mhs4.printAll();
+cout << bukunya.setJudul("Matematika").getJudul(); // chain function calls 
 
-    cout << "Akses dari luar object = " << mahasiswa::getNim() << endl; //mengakses nim melalui static member function "getNim"
+return 0;
 
-    return 0;
 }
