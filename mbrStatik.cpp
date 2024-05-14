@@ -19,3 +19,8 @@ class mahasiswa
 };
 
 int mahasiswa::nim = 243;
+
+void mahasiswa::setId()
+{
+    id = ++nim;
+}
